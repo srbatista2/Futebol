@@ -39,7 +39,7 @@ Jogador inserirjogador(int numJ){
     scanf(" %[^\n]s", novojogador.nome);
     printf("Idade do jogador: ");
     scanf("%i", &novojogador.idade);
-    printf("posição do jogador: ");
+    printf("posiÃ§Ã£o do jogador: ");
     scanf(" %[^\n]s", novojogador.posicao);
     return novojogador;
    }
@@ -51,7 +51,7 @@ Clube inserirclube(int numClubes){
     scanf(" %[^\n]s", novoclube.nome);
     printf("LOCAL DO CLUBE: ");
     scanf(" %[^\n]s", novoclube.local);
-    printf("ANO DE FUNDAÇÃO DO CLUBE: ");
+    printf("ANO DE FUNDAÃ‡ÃƒO DO CLUBE: ");
     scanf("%i", &novoclube.fundacao);
     novoclube.numJ = 0;
     puts("");
@@ -76,10 +76,10 @@ void listarjogador(int numJ, Jogador jogador[]){
     int i;
     system("cls");
     for(i=0;i<numJ;i++){
-        printf("%s\n", jogador[i].nome);
+        printf("NOME: %s\n", jogador[i].nome);
         printf("ID: %i\n", i);
         printf("IDADE: %i\n", jogador[i].idade);
-        printf("POSIÇÃO: %s\n\n", jogador[i].posicao);
+        printf("POSIÃ‡ÃƒO: %s\n\n", jogador[i].posicao);
 }
 }
 
@@ -90,7 +90,7 @@ void listarclubes(int numClubes, Clube clubes[]){
         printf("NOME: %s\n", clubes[i].nome);
         printf("ID: %i\n", i);
         printf("CIDADE: %s\n", clubes[i].local);
-        printf("FUNDAÇÃO: %i\n\n", clubes[i].fundacao);
+        printf("FUNDAÃ‡ÃƒO: %i\n\n", clubes[i].fundacao);
 }
 }
 Campeonato listarcampeonato(int numCamp, Campeonato campeonatos[]){
@@ -100,7 +100,7 @@ Campeonato listarcampeonato(int numCamp, Campeonato campeonatos[]){
 ;i++){
     printf("NOME: %s\n", campeonatos[i].nome);
     printf("ID: %i\n", i);
-    printf("PAÍS: %s\n", campeonatos[i].pais);
+    printf("PAÃS: %s\n", campeonatos[i].pais);
     printf("MODALIDADE: %s\n\n",campeonatos[i].modalidade);
 }
 }
@@ -154,7 +154,7 @@ int main()
 
         case '3':
             listarcampeonato(numCamp,campeonatos);
-            printf("DIGITE O ID DO CAMPEONATO, CASO NÃO ESTEJE LISTADO DIGITE UM ID NÃO CADASTRADO: ");
+            printf("DIGITE O ID DO CAMPEONATO, CASO NÃƒO ESTEJE LISTADO DIGITE UM ID NÃƒO CADASTRADO: ");
             scanf("%i", &idCamp);
             if(idCamp<numCamp&& idCamp>=0){
                 int numClubes = campeonatos[idCamp].numClubes;
@@ -178,12 +178,12 @@ int main()
 
         case '5':
             listarcampeonato(numCamp,campeonatos);
-            printf("DIGITE O ID DO CAMPEONATO, CASO NÃO ESTEJE LISTADO DIGITE UM ID NÃO CADASTRADO: ");
+            printf("DIGITE O ID DO CAMPEONATO, CASO NÃƒO ESTEJE LISTADO DIGITE UM ID NÃƒO CADASTRADO: ");
             scanf("%i", &idCamp);
             if(idCamp<numCamp&&idCamp>=0){
                 int numClubes = campeonatos[idCamp].numClubes;
                 listarclubes(numClubes, campeonatos[idCamp].clubes);
-                printf("DIGITE O ID DO CLUBE, CASO NÃO ESTEJE LISTADO DIGITE UM ID NÃO CADASTRADO: ");
+                printf("DIGITE O ID DO CLUBE, CASO NÃƒO ESTEJE LISTADO DIGITE UM ID NÃƒO CADASTRADO: ");
                 scanf("%i", &idClube);
                 if(idClube<numClubes&&idClube>=0){
                     int numJ = campeonatos[idCamp].clubes[idClube].numJ;
@@ -201,11 +201,11 @@ int main()
 
         case '6':
             listarcampeonato(numCamp,campeonatos);
-            printf("DIGITE O ID DO CAMPEONATO, CASO NÃO ESTEJE LISTADO DIGITE UM ID NÃO CADASTRADO: ");
+            printf("DIGITE O ID DO CAMPEONATO, CASO NÃƒO ESTEJE LISTADO DIGITE UM ID NÃƒO CADASTRADO: ");
             scanf("%i", &idCamp);
             if(idCamp<numCamp&&idCamp>=0){
                 listarclubes(numClubes, campeonatos[idCamp].clubes);
-                printf("DIGITE O ID DO CLUBE, CASO NÃO ESTEJE LISTADO DIGITE UM ID NÃO CADASTRADO: ");
+                printf("DIGITE O ID DO CLUBE, CASO NÃƒO ESTEJE LISTADO DIGITE UM ID NÃƒO CADASTRADO: ");
                 scanf("%i", &idClube);
                 if(idCamp<numClubes&&idCamp>=0){
                     int numJ = campeonatos[idCamp].clubes[idClube].numJ;
